@@ -7,13 +7,13 @@ import os
 dataset_dir = 'img'  # Substitua pelo caminho para sua pasta de imagens
 
 # Definir parâmetros
-img_height, img_width = 224, 224  # Definindo um novo tamanho para as imagens
-batch_size = 32
+img_height, img_width = 918, 918  # Definindo um novo tamanho para as imagens
+batch_size = 8
 
 # Carregar o conjunto de dados a partir do diretório
 train_dataset = tf.keras.utils.image_dataset_from_directory(
     dataset_dir,
-    validation_split=0.2,
+    validation_split=0.7,
     subset="training",
     seed=123,
     image_size=(img_height, img_width),
@@ -23,7 +23,7 @@ train_dataset = tf.keras.utils.image_dataset_from_directory(
 
 validation_dataset = tf.keras.utils.image_dataset_from_directory(
     dataset_dir,
-    validation_split=0.2,
+    validation_split=0.3,
     subset="validation",
     seed=123,
     image_size=(img_height, img_width),
